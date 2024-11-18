@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Fraud Detection API</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Additional CSS for styling the cards and layout */
+        body {
+            background-color: #f4f4f4; /* Optional: Set a background color */
+        }
+
+        .main-content {
+            padding: 20px; /* Add padding to the main content */
+            background-color: #fff; /* White background for the main content */
+            border-radius: 8px; /* Rounded corners for the main content */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .small-card {
+            background-color: #ffffff; /* White background for small cards */
+            border: 1px solid #ddd; /* Light border */
+            border-radius: 8px; /* Rounded corners */
+            padding: 20px; /* Padding inside the card */
+            margin: 10px; /* Margin around the card */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            transition: transform 0.3s, box-shadow 0.3s; /* Animation for hover effect */
+            flex: 1; /* Allow cards to grow */
+            min-width: 250px; /* Minimum width for cards */
+            max-width: 300px; /* Maximum width for cards */
+            text-align: left; /* Align text to the left */
+        }
+
+        .small-card:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+        }
+
+        .small-card h4 {
+            color: #4CAF50; /* Green for headings */
+            margin-bottom: 10px; /* Space below heading */
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow cards to wrap to the next line */
+            justify-content: space-around; /* Space cards evenly */
+            margin: 20px 0; /* Margin around the card container */
+        }
+
+        .diagram-container {
+            text-align: center;
+            margin: 20px 0;
+            width: 100%; /* Full width */
+        }
+
+        .diagram {
+            width: 100%; /* Full width */
+            height: auto; /* Maintain aspect ratio */
+            max-width: none; /* Remove max-width restriction */
+            margin: 0 auto; /* Center the diagram */
+        }
+
+        .explanation {
+            margin-top: 20px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .explanation-card {
+            background-color: #f9f9f9; /* Light background for contrast */
+            border: 1px solid #ddd; /* Light border */
+            border-radius: 8px; /* Rounded corners */
+            padding: 20px; /* Padding inside the card */
+            margin: 20px 0; /* Margin around the card */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        .explanation h3 {
+            color: #4CAF50; /* Green for headings */
+            margin-bottom: 10px; /* Space below heading */
+        }
+
+        .explore-btn {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">FraudGuard</a>
+    </header>
+
+    <main class="main-content mt-5">
+        <h2 class="text-center">Real-Time Fraud Detection API</h2>
+
+        <div class="diagram-container">
+            <h3>System Overview Diagram</h3>
+            <img src="images/uml-diagram.png" alt="UML Diagram" class="diagram">
+            <!-- Replace with the actual path to your UML diagram image -->
+        </div>
+
+        <div class="explanation">
+            <h3>Detailed Explanation of the Diagram:</h3>
+            <div class="explanation-card">
+                <h4>Actors:</h4>
+                <ul>
+                    <li><strong>Bank:</strong> Each bank in the system that trains its own fraud detection model based on its transaction data.</li>
+                    <li><strong>Federated Learning Server:</strong> Central server that aggregates the model updates from different banks to build a stronger, global fraud detection model.</li>
+                    <li><strong>Fraud Detection System:</strong> The system that uses the global model to evaluate transactions in real time and provide fraud risk scores.</li>
+                </ul>
+            </div>
+            <div class="explanation-card">
+                <h4>Flow of Operations:</h4>
+                <ol>
+                    <li><strong>Local Model Training:</strong> Each bank trains its own local fraud detection model using its transaction data. This model learns to identify fraudulent patterns specific to that bank.</li>
+                    <li><strong>Model Updates:</strong> After training, the bank sends model updates (not raw transaction data) to the Federated Learning Server. This ensures that sensitive data remains secure.</li>
+                    <li><strong>Aggregation:</strong> The Federated Learning Server aggregates the model updates from all participating banks to create a stronger Global Fraud Detection Model. This model benefits from the collective knowledge of all banks without compromising individual data privacy.</li>
+                    <li><strong>Real-Time Evaluation:</strong> The Fraud Detection System uses the Global Model to evaluate transactions in real time. It assigns a risk score to each transaction based on the learned patterns.</li>
+                    <li><strong>Feedback Loop:</strong> If a transaction is flagged as potentially fraudulent, the system sends the risk score and an explanation back to the respective bank. If necessary, it can also alert the bank about the transaction.</li>
+                </ol>
+            </div>
+            <div class="explanation-card">
+                <h4>Key Notes:</h4>
+                <ul>
+                    <li>The Global Fraud Detection Model aggregates insights from all participating banks without sharing sensitive transaction data.</li>
+                    <li>The Fraud Detection System provides real-time feedback and explanations for flagged transactions, allowing banks to take immediate action.</li>
+                    <li>This architecture promotes collaboration among banks while ensuring data privacy and security.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="explanation">
+            <h3>Detailed Transaction Flow with All Layers:</h3>
+            <div class="card-container">
+                <div class="small-card">
+                    <h4>Bank Initiates Transaction</h4>
+                    <p>A transaction is initiated by the bank’s system (e.g., ATM withdrawal, online purchase).</p>
+                    <p><strong>Details include:</strong></p>
+                    <ul>
+                        <li>Account ID</li>
+                        <li>Transaction Amount</li>
+                        <li>Location</li>
+                        <li>Timestamp</li>
+                        <li>Device Details</li>
+                    </ul>
+                    <p>The data is encrypted before leaving the bank’s environment for security.</p>
+                </div>
+                <div class="small-card">
+                    <h4>Encryption Layer</h4>
+                    <p>Ensures that sensitive transaction details are protected during transit.</p>
+                    <p>Uses protocols like TLS for transmission and additional payload encryption (e.g., AES).</p>
+                </div>
+                <div class="small-card">
+                    <h4>API Gateway</h4>
+                    <p>Validates the request format and forwards it to the message broker.</p>
+                    <p>Ensures authentication and rate-limiting to handle multiple incoming requests.</p>
+                </div>
+                <div class="small-card">
+                    <h4>Kafka Message Broker</h4>
+                    <p>Distributes transactions to various processing components for scalability.</p>
+                    <p>Organizes transactions into topics based on type (e.g., "debit," "credit").</p>
+                    <p>Guarantees delivery and fault tolerance.</p>
+                </div>
+                <div class="small-card">
+                    <h4>In-House Fraud Detection Model</h4>
+                    <p>Each bank has its own local machine learning model trained on its private data.</p>
+                    <p>The in-house model performs a preliminary analysis:</p>
+                    <ul>
+                        <li>Assigns a local risk score.</li>
+                        <li>Flags suspicious patterns based on the bank's historical data and rules.</li>
+                    </ul>
+                    <p>Results are sent to the central federated model for further refinement.</p>
+                </div>
+                <div class="small-card">
+                    <h4>Central Federated Learning Model</h4>
+                    <p>Aggregates risk score updates from multiple banks without accessing raw data.</p>
+                    <p>The global model detects patterns and anomalies across multiple banks.</p>
+                    <p>Generates an improved risk score based on:</p>
+                    <ul>
+                        <li>Patterns seen across institutions.</li>
+                        <li>Global fraud trends (e.g., bot attacks, compromised devices).</li>
+                    </ul>
+                    <p>The global model sends the combined result back to the in-house layer.</p>
+                </div>
+                <div class="small-card">
+                    <h4>Post-Processing Layer</h4>
+                    <p>Combines results from the central and in-house models.</p>
+                    <p>Generates:</p>
+                    <ul>
+                        <li>A final fraud score.</li>
+                        <li>An explanation for the decision (e.g., “Unusual IP address,” “High amount for this user”).</li>
+                    </ul>
+                    <p>Flags the transaction for manual review if the fraud score exceeds a threshold.</p>
+                </div>
+                <div class="small-card">
+                    <h4>Response to Bank</h4>
+                    <p>The processed result is sent back to the bank via the API Gateway.</p>
+                    <p>The response includes:</p>
+                    <ul>
+                        <li>Fraud Score</li>
+                        <li>Action Recommendation (e.g., "Approve," "Decline," or "Investigate").</li>
+                        <li>Reason (e.g., "Transaction from an unregistered device").</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <button class="explore-btn" onclick="window.history.back();">Back to Products</button>
+    </main>
+
+    <footer class="text-center bg-dark text-light py-3">
+        <p>&copy; 2024 FraudGuard Alerts. All rights reserved.</p>
+    </footer>
+</body>
+</html>

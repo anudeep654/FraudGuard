@@ -1,0 +1,48 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4; /* Light background for better contrast */
+}
+
+.card {
+    margin: 20px 0;
+}
+
+.job-listings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product-card {
+    background-color: #fff; /* White background for cards */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px;
+    text-align: center; /* Center text */
+    margin: 10px;
+    width: 300px; /* Fixed width for job cards */
+}
+
+.product-card h4 {
+    color: #4CAF50; /* Green for job titles */
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    margin: 10px 0; /* Space between paragraphs */
+    color: #000;
+}
+
+.explore-btn {
+    background-color: #4CAF50; /* Green button */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.explore-btn:hover {
+    background-color: #388e3c; /* Darker green on hover */
+}

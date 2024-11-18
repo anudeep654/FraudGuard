@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FraudGuard Alerts - Careers</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/careers.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">FraudGuard Alerts</a>
+    </header>
+
+    <main class="container mt-5">
+        <h2 class="text-center">Join Our Team</h2>
+        <div class="card">
+            <div class="card-content">
+                <h5>Search Job Openings</h5>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <select id="country">
+                            <option value="" disabled>Choose your country</option>
+                            <option value="sg" selected>Singapore</option>
+                            <option value="us">United States</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="ca">Canada</option>
+                            <option value="au">Australia</option>
+                        </select>
+                        <label>Country</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text" id="position" placeholder="Search by position">
+                        <label for="position">Position</label>
+                    </div>
+                </div>
+                <button class="btn waves-effect waves-light" id="search-btn">Search</button>
+            </div>
+        </div>
+
+        <h3 class="text-center mt-5">Current Openings</h3>
+        <div class="job-listings">
+            <div class="product-card">
+                <h4>AI/ML Engineer</h4>
+                <p>Build, train, and improve AI models for fraud detection.</p>
+                <p><strong>Key Skills:</strong> Python, TensorFlow, PyTorch, Keras, scikit-learn, deep learning.</p>
+                <button class="explore-btn">Apply Now</button>
+            </div>
+            <div class="product-card">
+                <h4>AI/ML Engineer</h4>
+                <p>Focus on data mining and anomaly detection algorithms.</p>
+                <p><strong>Key Skills:</strong> Python, TensorFlow, PyTorch, Keras, scikit-learn, deep learning.</p>
+                <button class="explore-btn">Apply Now</button>
+            </div>
+            <div class="product-card">
+                <h4>Backend Developer</h4>
+                <p>Handle platform infrastructure, scalability, and API development.</p>
+                <p><strong>Key Skills:</strong> Node.js, Go, Java, Python, RESTful APIs, gRPC, Kafka.</p>
+                <button class="explore-btn">Apply Now</button>
+            </div>
+            <div class="product-card">
+                <h4>Backend Developer</h4>
+                <p>Create robust, secure, and scalable backend systems.</p>
+                <p><strong>Key Skills:</strong> Node.js, Go, Java, Python, RESTful APIs, gRPC, Kafka.</p>
+                <button class="explore-btn">Apply Now</button>
+            </div>
+            <div class="product-card">
+                <h4>Frontend Developer</h4>
+                <p>Build a clean, user-friendly dashboard with high interactivity.</p>
+                <p><strong>Key Skills:</strong> React, Angular, or Vue.js; experience in building dashboards.</p>
+                <button class="explore-btn">Apply Now</button>
+            </div>
+            <div class="product-card">
+                <h4>DevOps Engineer</h4>
+                <p>Automate deployments and ensure infrastructure scalability.</p>
+                <p><strong>Key Skills:</strong> Docker, Kubernetes, AWS/GCP/Azure, Terraform, Jenkins.</p>
+                <button class="explore-btn">Apply Now</button>
+            </div>
+            <div class="product-card">
+                <h4>Sales & Marketing Lead</h4>
+                <p>Build relationships with early adopters and set up sales processes.</p>
+                <p><strong>Key Skills:</strong> Experience in B2B SaaS sales, understanding of fintech.</p>
+                <button class="explore-btn">Apply Now</button>
+            </div>
+            <div class="product-card">
+                <h4>Product Manager</h4>
+                <p>Define the product roadmap and gather feedback from customers.</p>
+                <p><strong>Key Skills:</strong> Experience in product management, market analysis.</p>
+                <button class="explore-btn">Apply Now</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center bg-dark text-light py-3">
+        <p>&copy; 2024 FraudGuard Alerts. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems);
+        });
+    </script>
+</body>
+</html>

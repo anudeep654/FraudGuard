@@ -1,0 +1,86 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4; /* Light background for better contrast */
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Responsive grid layout */
+    gap: 20px; /* Space between cards */
+    padding: 20px;
+    justify-items: center; /* Center align items in the grid */
+}
+
+.product-card {
+    background-color: #fff; /* White background for cards */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px;
+    text-align: center; /* Center text */
+    transition: transform 0.3s; /* Animation for hover effect */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Space out content evenly */
+    width: 100%; /* Set to 100% of the grid cell */
+    max-width: 350px; /* Set a max width for cards */
+    margin: 0; /* Remove margin to avoid overlap */
+}
+
+.product-card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.product-card h3 {
+    color: #4CAF50; /* Green for product titles */
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    margin: 10px 0; /* Space between paragraphs */
+    color: #000;
+}
+
+.product-image {
+    width: 100%; /* Responsive image */
+    max-height: 200px; /* Control the maximum height */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
+    border-radius: 8px; /* Rounded corners for images */
+}
+
+.explore-btn {
+    background-color: #4CAF50; /* Green button */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.explore-btn:hover {
+    background-color: #388e3c; /* Darker green on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* Stack cards in a single column */
+    }
+
+    .product-card {
+        width: 90%; /* Allow cards to take more width on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-card {
+        width: 100%; /* Full width on very small screens */
+    }
+}
+
+h2.text-center {
+    text-align: center; /* Center the text */
+    margin-top: 2em; /* Add top margin */
+    margin-bottom: 1em; /* Add bottom margin */
+}
